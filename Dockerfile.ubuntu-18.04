@@ -1,0 +1,9 @@
+FROM ubuntu:18.04
+
+LABEL maintainer="dominic.price@nottingham.ac.uk"
+
+RUN export DEBIAN_FRONTEND=noninteractive \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        rsync make texlive-full imagemagick inkscape \
+    && rm -rf /var/lib/apt/lists/*
